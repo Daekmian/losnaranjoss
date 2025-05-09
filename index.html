@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Los Naranjos Restaurante</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#cartas">Carta</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="profile">
+        <img src="tt.png" alt="Foto del Restaurante" class="profile-img" />
+      <h1>LOS NARANJOS RESTAURANTE</h1>
+      <p class="slogan">Auténtico sabor a fuego</p>
+      <p class="descripcion">
+        En Los Naranjos llevamos la tradición a otro nivel con nuestro Tatakua. Un horno de barro que despierta los sabores más puros y auténticos.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section id="cartas">
+      <h2>Nuestra Carta</h2>
+      <p>Explorá visualmente nuestra deliciosa carta.</p>
+      <div class="galeria-cartas">
+        <img src="menu1.jpg" alt="Menú 1" class="popup-img" />
+        <img src="menu2.jpg" alt="Menú 2" class="popup-img"/>
+        <img src="menu3.jpg" alt="Menú 3" class="popup-img" />
+        <img src="menu4.jpg" alt="Menú 4" class="popup-img"/>
+        <img src="menu5.jpg" alt="Menú 5" class="popup-img" />
+        <img src="menu6.jpg" alt="Menú 6" class="popup-img"/>
+        <img src="menu7.jpg" alt="Menú 7" class="popup-img">
+        <img src="menu8.jpg" alt="Menú 8" class="popup-img"/>
+        <img src="menu9.jpg" alt="Menú 9" class="popup-img" />
+        <img src="menu10.jpg" alt="Menú 10" class="popup-img" />
+      </div>
+    </section>
+
+    <div id="popup-container" class="popup-hidden">
+      <span id="popup-close">&times;</span>
+      <img id="popup-image" src="" alt="Imagen Ampliada">
+    </div>
+
+    <section id="galeria">
+      <h2>Galería del Restaurante</h2>
+      <p>Fotos del local</p>
+      <div class="galeria-cartas">
+        <img src="local1.jpg" alt="Local 1" class="popup-img" />
+        <img src="local2.jpg" alt="Local 2" class="popup-img" />
+        <img src="local3.jpg" alt="Local 3" class="popup-img" />
+        <img src="local4.jpg" alt="Local 4" class="popup-img" />
+        <img src="local5.jpg" alt="Local 5" class="popup-img" />
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <section id="contacto">
+      <h2>Contáctanos</h2>
+      <p>Ubicación: En La Heroica Piribebuy, Barrio Virgen Del Rosario</p>
+      <p>Horario de atención:</p>
+      <ul>
+        <li>Jueves a Viernes: 19:00 hs a 00:00 hs</li>
+        <li>Sábados y Domingos: 11:00 hs a 15:00 hs y 19:00 hs a 00:00 hs</li>
+      </ul>
+      <p>
+        <a href="https://wa.me/595982282143" target="_blank" class="whatsapp">Contáctanos por WhatsApp</a>
+      </p>
+    </section>
+  </footer>
+
+  <script>
+    const popupContainer = document.getElementById("popup-container");
+    const popupImage = document.getElementById("popup-image");
+    const popupClose = document.getElementById("popup-close");
+    const images = document.querySelectorAll(".popup-img");
+
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        popupImage.src = img.src;
+        popupContainer.classList.add("popup-visible");
+      });
+    });
+
+    popupClose.addEventListener("click", () => {
+      popupContainer.classList.remove("popup-visible");
+    });
+
+    popupContainer.addEventListener("click", (e) => {
+      if (e.target === popupContainer) {
+        popupContainer.classList.remove("popup-visible");
+      }
+    });
+  </script>
+</body>
+</html
